@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MadHubxyz/Mad-Hub/main/Mad%20Hub", true))()
