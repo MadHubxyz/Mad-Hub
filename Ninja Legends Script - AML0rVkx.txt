@@ -1,0 +1,138 @@
+if IY_LOADED and not _G.IY_DEBUG == true then
+    error("Mad Hub is already Mad!",0)
+    return
+end
+
+pcall(function() getgenv().IY_LOADED = true end)
+
+if not game:IsLoaded() then
+    local notLoaded = Instance.new("Message", game:GetService("CoreGui"))
+    notLoaded.Text = 'Mad Hub is Mad'
+    game.Loaded:Wait()
+    notLoaded:Destroy()
+end
+
+if game.PlaceId == 3956818381 then
+end
+
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("⚡Ninja Legends Script | by Fxnn Over Heaven#5857⚡", "Ocean")
+
+    local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+
+MainSection:NewButton("Unlock all Islands", "Ur Unlocking all Islands", function(v)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(67, 766, -142)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(220, 2014, 264)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(156, 4048, 69)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(148, 5657, 86)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(144, 9285, 75)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(146, 17687, 81)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(143, 28257, 75)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(146, 24070, 83)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(148, 13680, 86)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(145, 79747, 81)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(145, 66669, 79)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(147, 39318, 82)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(147, 46011, 82)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(146, 59595, 81)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(144, 52608, 76)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(144, 33207, 78)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(144, 70271, 77)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(146, 74443, 81)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(146, 87051, 82)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(146, 83199, 80)
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(147, 91246, 81)
+end)
+
+
+MainSection:NewToggle("Auto Swing", "U autoswinging", function(v)
+    getgenv().autoswing = v
+    while true do
+        if not getgenv().autoswing then return end
+        for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+            if v:FindFirstChild("ninjitsuGain") then
+                game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                break
+            end
+        end
+        local A_1 = "swingKatana"
+        local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+        Event:FireServer(A_1)
+        wait(0.1)
+    end
+end)
+
+
+MainSection:NewToggle("Auto Sell", "Make you  AutoSell", function(v)
+    getgenv().autosell = v
+    while true do
+        if getgenv().autoswing == false then return end
+        game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        wait(0.1)
+        game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = CFrame.new(0,0,0)
+        wait(0.1)
+    end
+end)
+
+
+local Tab = Window:NewTab("Auto Buy Items")
+local Section = Tab:NewSection("Auto Buys Items")
+
+Section:NewToggle("Auto buy all belts", "Auto buys all belts", function(v)
+    getgenv().buybelts = v
+    while true do
+        if not getgenv().buybelts then return end
+        local A_1 = "buyAllBelts"
+        local A_2 = "Inner Peace Island"
+        local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+        Event:FireServer(A_1, A_2)
+        wait(0.5)
+    end
+end)
+
+
+Section:NewToggle("Auto buy all swords", "Auto buys all swords", function(v)
+    getgenv().buyswords = v
+    while true do
+        if not getgenv().buyswords then return end
+        local A_1 = "buyAllSwords"
+        local A_2 = "Inner Peace Island"
+        local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+        Event:FireServer(A_1, A_2)
+        wait(0.5)
+    end
+end)
+
+
+local Tab = Window:NewTab("UI HotKeys")
+local Section = Tab:NewSection("Press RightAlt for toogle the UI")
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightAlt, function()
+	Library:ToggleUI()
+end)
+
+
+local Tab = Window:NewTab("Credits")
+local Section = Tab:NewSection("Special Thanks To Mercury#0739")
+Section:NewLabel("For Doing The Islands Script!")
+Section:NewLabel("Removed Infinitie yield!")

@@ -1,0 +1,167 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Prison Life Script | by Mercury#0739", "Ocean")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Main")
+Section:NewDropdown("Give Gun", "Gives the Localplayer a gun", {"M9", "Remington 870", "AK-47"}, function(v)
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
+    local Event = game:GetService("Workspace").Remote.ItemHandler
+    Event:InvokeServer(A_1)
+end)
+Section:NewButton("Infinite Yield", "For Fun", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("Player")
+Section:NewSlider("Walkspeed", "Changes the walkspeed", 300, 16, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+Section:NewSlider("Jumppower", "Changes the jumppower", 300, 50, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+local Tab = Window:NewTab("Teams")
+local Section = Tab:NewSection("Teams")
+Section:NewButton("Police", "Switch team to Police", function()
+    workspace.Remote.TeamEvent:FireServer("Bright blue")
+end)
+Section:NewButton("Inmate", "Switch team to Inmate", function()
+    workspace.Remote.TeamEvent:FireServer("Bright orange")
+end)
+Section:NewButton("Neutral", "Switch team to Neutrat", function()
+    Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+end)
+Section:NewButton("Criminal", "Switch team to Criminal", function()
+    wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-976.125183, 109.123924, 2059.99536)
+
+wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.77,100,2379.07)
+end)
+local Tab = Window:NewTab("Teleport")
+local Section = Tab:NewSection("Teleport")
+Section:NewButton("Prison", "Teleport you to Prison", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.77,100,2379.07)
+end)
+Section:NewButton("Crim Base", "Teleport you to Crimbase", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.46,94.13,2063.63)
+end)
+Section:NewButton("Yard", "Teleport you to Yard", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(779.87,98,2458.93)
+end)
+local Tab = Window:NewTab("Remove")
+local Section = Tab:NewSection("Remove")
+Section:NewButton("Remove Walls", "Removing Walls", function()
+    wait(0.1)
+game.Workspace.Prison_Guard_Outpost:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cafeteria.building:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cafeteria.glass:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cafeteria.oven:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cafeteria.shelves:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cafeteria.vents:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cafeteria.accents:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cafeteria.vendingmachine:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cafeteria.Prison_table1:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cafeteria.counter:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cafeteria.boxes:Remove()
+end)
+Section:NewButton("Remove All", "Removing All", function()
+    wait(0.1)
+game.Workspace.Prison_Halls.walls:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Halls.roof:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Halls.outlines:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Halls.lights:Remove()
+
+wait(0.1)
+Workspace.Prison_Halls.accent:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Halls.glass:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.b_front:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.doors:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.c_tables:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.a_front:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.b_outerwall:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.c_wall:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.b_wall:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.c_hallwall:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.a_outerwall:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.b_ramp:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.a_ramp:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.a_walls:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.Cells_B:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.Cells_A:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.c_corner:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.Wedge:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.a_ceiling:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Cellblock.b_ceiling:Remove()
+
+wait(0.1)
+game.Workspace.City_buildings:Remove()
+
+wait(0.1)
+game.Workspace.Prison_OuterWall:Remove()
+
+wait(0.1)
+game.Workspace.Prison_Fences:Remove()
+end)

@@ -1,0 +1,18 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Millionaire Empire Tycoon Script | by Fxnn Over Heaven#5857", "Ocean")
+
+local Tab = Window:NewTab("eZ Cash")
+local Section = Tab:NewSection("eZ Script")
+Section:NewTextBox("eZ Cash", "Gives you eZ Cash", function(txt)
+	game.ReplicatedStorage.Events.CrateClaim:FireServer("Cash", "1000000000000000")
+    end)
+
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("Local Player")
+
+Section:NewSlider("WalkSpeed", "Gives Player WalkSpeed", 500, 16, function(s) 
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+Section:NewSlider("JumpPower", "Gives Player JumpPower", 500, 16, function(s) 
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
