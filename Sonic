@@ -1,0 +1,58 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mapple7777/UI-Librarys/main/UI-1/UI.lua"))()
+
+local Window = Library:Create("Mad Hub","Sonic Speed Sim")
+
+local Tab1 = Window:Tab("Main",true)
+
+Tab1:Label("Scripts")
+
+Tab1:Button("Collect Orbs",function()
+spawn(function()
+    while wait(1) do
+    for i,v in pairs(game:GetService("Workspace").Map.Objects:GetChildren()) do
+        if v:IsA("Model") then 
+            game:GetService("ReplicatedStorage").Knit.Services.WorldCurrencyService.RE.PickupCurrency:FireServer(v.Name)
+            end
+        end
+    end
+end)
+
+end)
+
+Tab1:Button("16k Rings every 6hour",function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/kkeyy-hash/roblox/main/SonicSpeedSimulator2.lua'))()
+end)
+
+Tab1:Button("Auto Exp & Steps",function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/kkeyy-hash/roblox/main/SonicSpeedSimulator.lua'))()
+end)
+
+Tab1:Button("serverhop",function()
+    wait(6) 
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/LeadMarker/OpenSource/main/Resources/Hop.lua'))()
+    
+        serverhop()
+end)
+
+Tab1:Toggle("AutoRebirth",function(x)
+    spawn(function()
+        game:GetService("ReplicatedStorage").Knit.Services.LevelingService.RF.AttemptRebirth:InvokeServer()
+        end)
+end)
+
+
+local Tab2 = Window:Tab("Player",false)
+
+Tab2:Label("LocalPlayer")
+
+Tab2:Slider("WalkSpeed",16,500,function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Tab2:Slider("JumpPower",16,500,function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+Tab2:Keybind("Toggle",Enum.KeyCode.RightShift,function()
+    Library:Toggle()
+end)
